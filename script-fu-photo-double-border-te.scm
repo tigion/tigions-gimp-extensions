@@ -2,7 +2,7 @@
 ; [ ] Lizenshinweis
 
 ; define function
-(define (script-fu-photo-double-border-te img drawable border_color border_size passepartout_color passepartout_size)
+(define (script-fu-photo-double-border-te img drawable border_color border_size passepartout_color passepartout_size use_merge_layers)
   (let*
     (
       (save_color_foreground (car (gimp-context-get-foreground)))
@@ -187,6 +187,19 @@
     )
 
     ; ---------------------------------------------------------------
+    ; merge layers
+    ; ---------------------------------------------------------------
+    
+    (if (= use_merge_layers TRUE)
+      (begin
+        (set! newLayer_border (car (gimp-image-merge-down img newLayer_border EXPAND-AS-NECESSARY)))
+        (set! newLayer_border (car (gimp-image-merge-down img newLayer_border EXPAND-AS-NECESSARY)))
+        (set! newLayer_border (car (gimp-image-merge-down img newLayer_border EXPAND-AS-NECESSARY)))
+        (gimp-drawable-set-name newLayer_border "Border+Passepartout")
+      )
+    )
+
+    ; ---------------------------------------------------------------
     ; reset gimp state
     ; ---------------------------------------------------------------
 
@@ -210,7 +223,10 @@
     (gimp-displays-flush img)
 
     ; return values
-    (list newLayer_border newLayer_border_Shadow newLayer_passepartout newLayer_passepartout_Shadow)
+    (if (= use_merge_layers TRUE)
+      (list newLayer_border)
+      (list newLayer_border newLayer_border_Shadow newLayer_passepartout newLayer_passepartout_Shadow)
+    )
   )
 )
 
@@ -229,6 +245,7 @@
   SF-ADJUSTMENT  "Breite des Rahmens" '(10 1 1000 1 10 0 1)
   SF-COLOR       "Passepartoutfarbe (innen)" '(255 255 255)
   SF-ADJUSTMENT  "Breite des Passepartouts" '(20 0 1000 1 10 0 1)
+  SF-TOGGLE      "Ergebnislayer zusammenfassen" TRUE
 )
 (script-fu-menu-register "script-fu-photo-double-border-te" "<Image>/Script-Fu/Photo/")
 
