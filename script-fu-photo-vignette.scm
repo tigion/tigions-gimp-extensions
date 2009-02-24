@@ -1,21 +1,3 @@
-; register vignette function
-(script-fu-register
-  "script-fu-photo-vignette" ;func name
-  "Vignette (Randabschattung) erzeugen ..." ;menu label
-  "Creates a vignette around a photo." ;description
-  "Christoph Zirkelbach" ;author
-  "Christoph Zirkelbach" ;copyright notice
-  "July 19, 2008" ;date created
-  "" ;image type that the script works on
-  SF-IMAGE "Image" 0
-  SF-DRAWABLE "Drawable" 0
-  SF-COLOR       "Farbe"  '(0 0 0)
-  SF-ADJUSTMENT  "Deckkraft" '(60 0 100 1 10 1 0)
-  SF-ADJUSTMENT  "Radius" '(5 -75 25 1 10 0 0)
-  SF-ADJUSTMENT  "Härte" '(75 0 100 1 10 0 0)
-)
-(script-fu-menu-register "script-fu-photo-vignette" "<Image>/Script-Fu/Photo/")
-
 ; define vignette function
 (define (script-fu-photo-vignette img drawable color opacity f_radius f_strength)
   (let*
@@ -160,3 +142,21 @@
     (list img drawable newLayer)
   )
 )
+
+; register vignette function
+(script-fu-register
+  "script-fu-photo-vignette" ;func name
+  "Vignettierung (Randabschattung) ..." ;menu label
+  "Creates a vignette around a photo." ;description
+  "Christoph Zirkelbach" ;author
+  "Christoph Zirkelbach" ;copyright notice
+  "July 21, 2008" ;date created
+  "" ;image type that the script works on
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR       "Farbe"  '(0 0 0)
+  SF-ADJUSTMENT  "Deckkraft" '(60 0 100 1 10 1 0)
+  SF-ADJUSTMENT  "Radius" '(5 -75 25 1 10 0 0)
+  SF-ADJUSTMENT  "Härte" '(75 0 100 1 10 0 0)
+)
+(script-fu-menu-register "script-fu-photo-vignette" "<Image>/Script-Fu/Photo/")
