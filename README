@@ -1,0 +1,37 @@
+A place for my more or less usefull extensions for gimp.
+
+
+Photo Vignette
+---------------------------------------------------------------------------
+Type:        Gimp Script-Fu
+Function:    script-fu-photo-vignette
+Description: Creates a vignette to a photo.
+Projectsite: http://blog.tigion.de/2008/07/19/gimp-script-fu-photo-vignette/
+Version:     20080721
+
+
+Photo Retro Vintage
+---------------------------------------------------------------------------
+Type:        Gimp Script-Fu
+Function:    script-fu-photo-retro-vintage
+Description: Creates sometimes a usefull vintage effect to a photo.
+Projectsite: http://blog.tigion.de/2008/07/25/gimp-script-fu-photo-retro-vintage/
+Version:     20080723
+
+
+Photo Double Border (AE)
+---------------------------------------------------------------------------
+Type:        Gimp Script-Fu
+Function:    script-fu-photo-double-border-ae
+Description: Creates a double border around a photo (Anticeye Edition).
+Projectsite: http://blog.tigion.de/2008/07/22/gimp-script-fu-photo-double-border-ae/
+Version:     20080721
+
+
+Photo Double Border (TE)
+---------------------------------------------------------------------------
+Type:        Gimp Script-Fu
+Function:    script-fu-photo-double-border-te
+Description: Creates a double border around a photo (Tigion Edition).
+Projectsite: -
+Version:     work in progress
