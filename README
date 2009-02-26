@@ -35,3 +35,12 @@ Function:    script-fu-photo-double-border-te
 Description: Creates a double border around a photo (Tigion Edition).
 Projectsite: -
 Version:     work in progress
+
+
+(Blogbild (inside shadow))
+---------------------------------------------------------------------------
+Type:        Gimp Script-Fu
+Function:    script-fu-blog-image-inside-shadow
+Description: Creates an inside shadow around an image.
+Projectsite: -
+Version:     work in progress
